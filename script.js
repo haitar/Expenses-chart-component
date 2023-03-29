@@ -16,7 +16,7 @@ today.style.backgroundColor = 'var(--cyan-primary)';
 const amounts = [];
 async function getAmounts() {
   try {
-    const res = await fetch('/data.json');
+    const res = await fetch('./data.json');
     const data = await res.json();
 
     data.forEach((data) => {
@@ -24,7 +24,7 @@ async function getAmounts() {
         data.amount * 2.5
       }px`;
       // get the amount data for the after task.
-      return amounts.push(data.amount);
+      amounts.push(data.amount);
     });
   } catch (err) {
     console.error(err);
